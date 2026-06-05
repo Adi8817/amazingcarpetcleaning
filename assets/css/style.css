@@ -70,7 +70,7 @@ img {
 }
 
 /* ─── TOP PROMO BAR ─── */
-.promo-bar {
+/* .promo-bar {
   background: linear-gradient(90deg, var(--orange2), var(--orange));
   color: #fff;
   text-align: center;
@@ -95,7 +95,317 @@ img {
   50% {
     opacity: 0.6;
   }
+} */
+
+
+
+
+
+/* ═════════ PROMO BAR ═════════ */
+
+.promo-bar {
+  position: relative;
+  z-index: 1000;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--orange2),
+      var(--orange)
+    );
+
+  overflow: hidden;
 }
+
+/* subtle shine */
+.promo-bar::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255,255,255,.12) 50%,
+      transparent 80%
+    );
+
+  transform: translateX(-100%);
+  animation: promoShine 7s linear infinite;
+}
+
+@keyframes promoShine {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* container */
+.promo-inner {
+  width: min(1280px, 100%);
+  margin: auto;
+
+  min-height: 54px;
+  padding: 10px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+/* Left */
+.promo-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.promo-fire {
+  font-size: 18px;
+  animation: firePulse 1.8s infinite;
+}
+
+@keyframes firePulse {
+  0%,100%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.12);
+  }
+}
+
+.promo-text {
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: .2px;
+}
+
+.promo-text strong {
+  font-weight: 800;
+}
+
+/* CTA */
+
+
+
+
+
+
+/* ═════════ PROMO BAR ═════════ */
+
+.promo-bar {
+  position: relative;
+  z-index: 1000;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f59e0b 0%,
+      #fbbf24 100%
+    );
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 20px rgba(245,158,11,.18);
+}
+
+/* subtle moving shine */
+.promo-bar::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent 25%,
+      rgba(255,255,255,.12) 50%,
+      transparent 75%
+    );
+
+  transform: translateX(-120%);
+  animation: promoShine 8s linear infinite;
+}
+
+@keyframes promoShine {
+  to {
+    transform: translateX(120%);
+  }
+}
+
+/* Container */
+.promo-inner {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+
+  min-height: 58px;
+  padding: 10px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Content */
+.promo-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+}
+
+/* Fire icon */
+.promo-fire {
+  font-size: 20px;
+
+  animation:
+    firePulse 1.8s infinite;
+}
+
+@keyframes firePulse {
+  0%,100%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.15);
+  }
+}
+
+/* Text */
+.promo-text {
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: .2px;
+  line-height: 1.5;
+}
+
+.promo-text strong {
+  font-weight: 800;
+}
+
+/* CTA Button */
+.promo-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  height: 40px;
+  padding: 0 18px;
+
+  border-radius: 999px;
+
+  background: #fff;
+
+  border:
+    1px solid rgba(255,255,255,.35);
+
+  color: #9a6700;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
+
+  flex-shrink: 0;
+}
+
+.promo-call:hover {
+  background: #fff8e7;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 26px rgba(0,0,0,.18);
+}
+
+.promo-call i {
+  color: #16a34a;
+  font-size: 13px;
+}
+
+/* ═════════ LAPTOP ═════════ */
+
+@media (max-width: 1199px) {
+
+  .promo-inner {
+    padding: 10px 22px;
+  }
+
+  .promo-text {
+    font-size: 13px;
+  }
+}
+
+/* ═════════ TABLET ═════════ */
+
+@media (max-width: 991px) {
+
+  .promo-inner {
+    min-height: 52px;
+    padding: 10px 18px;
+    gap: 14px;
+  }
+
+  .promo-text {
+    font-size: 13px;
+  }
+
+  .promo-call {
+    height: 38px;
+    padding: 0 16px;
+  }
+}
+
+/* ═════════ MOBILE HIDE ═════════ */
+
+@media (max-width: 767px) {
+
+  .promo-bar {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* ─── NAV ─── */
 /* nav {
@@ -1426,6 +1736,221 @@ label.fl {
     font-size: 12.5px;
   }
 }
+
+
+
+
+
+
+
+
+/* ═════════ TRUST CTA BUTTONS ═════════ */
+
+.trust-cta-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 18px;
+  margin-top: 38px;
+}
+
+/* Shared Button */
+.trust-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-width: 300px;
+  height: 68px;
+
+  padding: 0 34px;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Premium shine */
+.trust-btn::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 80px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.25),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+  transition: .7s ease;
+}
+
+.trust-btn:hover::before {
+  left: 130%;
+}
+
+/* Hover */
+.trust-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* CALL BUTTON */
+.trust-btn-call {
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #22c55e
+    );
+
+  color: #fff;
+
+  box-shadow:
+    0 14px 34px rgba(34,197,94,.25);
+}
+
+.trust-btn-call:hover {
+  box-shadow:
+    0 20px 42px rgba(34,197,94,.35);
+}
+
+/* QUOTE BUTTON */
+.trust-btn-quote {
+  background:
+    linear-gradient(
+      135deg,
+      #f59e0b,
+      #fbbf24
+    );
+
+  color: #fff;
+
+  box-shadow:
+    0 14px 34px rgba(245,158,11,.25);
+}
+
+.trust-btn-quote:hover {
+  box-shadow:
+    0 20px 42px rgba(245,158,11,.35);
+}
+
+/* Icons */
+.trust-btn i {
+  font-size: 20px;
+}
+
+/* ═════════ TABLET ═════════ */
+
+@media (max-width: 991px) {
+
+  .trust-btn {
+    min-width: 260px;
+    height: 62px;
+    font-size: 17px;
+  }
+}
+
+/* ═════════ MOBILE ═════════ */
+
+/* ═════════ MOBILE CTA FIX ═════════ */
+
+@media (max-width: 767px) {
+
+  .trust-cta-wrap {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+    margin-top: 22px;
+
+    padding-inline: 14px;
+  }
+
+  .trust-btn {
+    width: 100%;
+    min-width: 100%;
+
+    height: 52px;
+    padding: 0 18px;
+
+    border-radius: 16px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    justify-content: center;
+
+    box-shadow:
+      0 8px 18px rgba(15,23,42,.08);
+
+    transform: none !important;
+  }
+
+  .trust-btn i {
+    font-size: 15px;
+  }
+
+  /* Softer mobile shadows */
+  .trust-btn-call {
+    box-shadow:
+      0 8px 20px rgba(34,197,94,.18);
+  }
+
+  .trust-btn-quote {
+    box-shadow:
+      0 8px 20px rgba(245,158,11,.18);
+  }
+
+  /* Remove heavy hover on mobile */
+  .trust-btn:hover {
+    transform: none;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+  .trust-cta-wrap {
+    padding-inline: 12px;
+  }
+
+  .trust-btn {
+    height: 50px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+  .trust-btn i {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
 
 /* ─── SECTION BASE ─── */
 section {
