@@ -6386,7 +6386,13 @@ textarea.fi{
 
 
 
+.ba-sec .sec-title{
+  color: #fff !important;
+}
 
+.ba-sec .sec-title span{
+  color: var(--orange);
+}
 
 
 
