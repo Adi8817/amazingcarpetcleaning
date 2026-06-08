@@ -76,35 +76,112 @@
 
     <!-- Font Awesome -->
 
-    <nav class="navbar">
-      <div class="nav-inner">
-        <!-- Logo -->
-        <a
-          class="nav-brand"
-          href="#"
-          aria-label="Amazing Carpet Cleaning North Brisbane"
-        >
-          <img
-            class="nav-logo"
-            src="assets/image/website-logo.png"
-            alt="Amazing Carpet Cleaning"
-          />
+   
+
+
+
+
+
+<nav class="navbar">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a
+      class="nav-brand"
+      href="#"
+      aria-label="Amazing Carpet Cleaning North Brisbane"
+    >
+      <img
+        class="nav-logo"
+        src="assets/image/website-logo.png"
+        alt="Amazing Carpet Cleaning"
+      />
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#carpet-cleaning">Carpet Cleaning</a></li>
+      <li><a href="#before-after">Before & After</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#service-areas">Service Areas</a></li>
+      <li><a href="#why-us">Why Choose Us</a></li>
+    </ul>
+
+    <!-- Right Buttons -->
+    <div class="nav-right">
+
+      <a class="btn-call nav-call" href="tel:+610477657695">
+        <i class="fa-solid fa-phone-volume"></i>
+        <span>+61 0477 657 695</span>
+      </a>
+
+      <a class="btn-quote nav-quote" href="#lead-form">
+        <i class="fa-solid fa-file-signature"></i>
+        <span>Get Free Quote</span>
+      </a>
+
+      <!-- Mobile Actions -->
+      <div class="mobile-actions">
+        <a class="mobile-call" href="tel:+610477657695">
+          <i class="fa-solid fa-phone"></i>
         </a>
 
-        <!-- Right Buttons -->
-        <div class="nav-right">
-          <a class="btn-call nav-call" href="tel:+610477657695">
-            <i class="fa-solid fa-phone-volume"></i>
-            <span>+61 0477 657 695</span>
-          </a>
-
-          <a class="btn-quote nav-quote" href="#lead-form">
-            <i class="fa-solid fa-file-signature"></i>
-            <span>Get Free Quote</span>
-          </a>
-        </div>
+        <button class="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </nav>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="#">Home</a>
+    <a href="#carpet-cleaning">Carpet Cleaning</a>
+    <a href="#before-after">Before & After</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#services">Services</a>
+    <a href="#service-areas">Service Areas</a>
+    <a href="#why-us">Why Choose Us</a>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- ══ HERO BANNER ══ -->
     <div class="hero">
@@ -499,7 +576,7 @@
     </section>
 
     <!-- ══ CARPET CLEANING DEDICATED SECTION ══ -->
-    <section class="carpet-sec">
+    <section  id="carpet-cleaning" class="carpet-sec">
       <div class="container">
         <!-- Heading -->
         <div class="sec-center">
@@ -673,7 +750,7 @@
     </section>
 
     <!-- ══ BEFORE & AFTER ══ -->
-    <section class="ba-sec">
+    <section id="before-after" class="ba-sec">
       <div class="container">
         <div class="sec-center">
           <span class="sec-tag"> Real Results </span>
@@ -823,7 +900,7 @@
 
     <!-- ══ PROMOTIONAL OFFER ══ -->
 
-    <section class="promo-sec">
+    <section id="pricing" class="promo-sec">
       <div class="container">
         <div class="sec-center">
           <span class="sec-tag"> NORTH BRISBANE EXCLUSIVE OFFER </span>
@@ -923,7 +1000,7 @@
     </section>
 
     <!-- ══ SERVICES ══ -->
-    <section class="services">
+    <section id="services" class="services">
       <div class="container">
         <div class="sec-center">
           <span class="sec-tag">All Services</span>
@@ -1029,7 +1106,7 @@
     </section>
 
     <!-- ══ AREAS + MAP ══ -->
-    <section class="areas-sec">
+    <section id="service-areas" class="areas-sec">
       <div class="container">
         <div class="sec-center">
           <span class="sec-tag">Service Areas</span>
@@ -1182,7 +1259,7 @@
 
     <!-- ══ WHY WE ARE THE BEST ══ -->
     <!-- WHY BEST SECTION -->
-    <section class="why-best">
+    <section id="why-us" class="why-best">
       <div class="container">
         <div class="sec-center">
           <span class="sec-tag"> Why We're #1 </span>
@@ -2122,5 +2199,28 @@
     >
 
     <script src="assets/js/script.js"></script>
+
+
+
+
+
+    <script>
+const menuBtn = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+menuBtn.addEventListener("click", function () {
+  mobileMenu.classList.toggle("active");
+
+  const icon = menuBtn.querySelector("i");
+
+  if (mobileMenu.classList.contains("active")) {
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-xmark");
+  } else {
+    icon.classList.remove("fa-xmark");
+    icon.classList.add("fa-bars");
+  }
+});
+</script>
   </body>
 </html>
